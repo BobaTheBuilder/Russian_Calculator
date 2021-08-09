@@ -14,4 +14,7 @@ class Calculator {
             return null
         }
     }
+    fun postfixNotationToAnswer(postfixNotation: String): Double{
+        
+    }
 }
