@@ -18,3 +18,12 @@ internal class CalculatorTest {
         assertEquals(expected, calculator.translationToPostfixRecord(expression))
     }
 }
+    @Test
+     fun plusTest() {
+        val expressionOne = 3.2
+        val expressionTwo = 5.7
+        val calculator = Calculator()
+        val expected = 8.9
+            assertEquals(expected, calculator.plus(expressionOne,expressionTwo))
+
+    }
