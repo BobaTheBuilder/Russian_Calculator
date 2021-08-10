@@ -1,19 +1,5 @@
 class Calculator {
-    fun plus(leftOperand: Double, rightOperand:Double) =  leftOperand + rightOperand
-    fun minus(leftOperand: Double, rightOperand: Double) = leftOperand - rightOperand
-    fun multiply(leftOperand: Double, rightOperand: Double) = leftOperand * rightOperand
-    fun divide(leftOperand: Double, rightOperand: Double): Double?{
-        try {
-            if (rightOperand == 0.0)
-                throw Exception("Division by zero!")
-            else
-                return leftOperand/rightOperand
-        }
-        catch (e: Exception){
-            print(e.message)
-            return null
-        }
-    }
+
     fun translationToPostfixRecord(expression: String): String {
         val highPriority = "/*"
         val lowPriority = "+-"
@@ -61,14 +47,15 @@ class Calculator {
                         }
                     }
                     in bracket -> {
-                        if (expression[i] == '(') stack.add(expression[i])
-                        else if ('(' in stack) {
+                        if (expression[i] == '(') {
+                            stack.add(expression[i])
+                        } else if ('(' in stack) {
                             while (stack.last() != '(') {
                                 postfixExpression += stack.last()
                                 stack.removeAt(stack.lastIndexOf(stack.last()))
                             }
                             stack.removeAt(stack.lastIndexOf(stack.last()))
-                        }
+                        } else return "An error was made in the expression!!!"
                     }
                 }
             } else stack.add(expression[i])
@@ -77,6 +64,7 @@ class Calculator {
             postfixExpression += stack.last()
             stack.removeAt(stack.lastIndexOf(stack.last()))
         }
-        return postfixExpression
+        return if ('(' !in postfixExpression && ')' !in postfixExpression) postfixExpression
+        else "An error was made in the expression!!!"
     }
 }

@@ -17,13 +17,14 @@ internal class CalculatorTest {
         val expected = " 4.1 6+ 2.9 9.6* 7-/"
         assertEquals(expected, calculator.translationToPostfixRecord(expression))
     }
-}
-    @Test
-     fun plusTest() {
-        val expressionOne = 3.2
-        val expressionTwo = 5.7
-        val calculator = Calculator()
-        val expected = 8.9
-            assertEquals(expected, calculator.plus(expressionOne,expressionTwo))
 
+    @Test
+    fun errorOutputIfNumberOfBracketsInExpressionIsIncorrect() {
+        val expression = "(2+3*6"
+        val calculator = Calculator()
+        val expected = "An error was made in the expression!!!"
+        assertEquals(expected, calculator.translationToPostfixRecord(expression))
     }
+}
+
+
