@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="CalculatorTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2021-08-10T00:26:30" hostname="DESKTOP-C0HIV9Q" time="0.114">
+  <properties/>
+  <testcase name="postfixToInt method test &quot;Division by 0&quot;()" classname="CalculatorTest" time="0.096"/>
+  <testcase name="postfixToInt method test 1()" classname="CalculatorTest" time="0.005"/>
+  <testcase name="postfixToInt method test 2()" classname="CalculatorTest" time="0.004"/>
+  <system-out><![CDATA[Division by zero!
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
