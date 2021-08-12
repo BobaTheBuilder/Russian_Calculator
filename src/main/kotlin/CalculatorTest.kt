@@ -3,7 +3,7 @@ import org.junit.jupiter.api.Test
 
 internal class CalculatorTest {
     @Test
-    fun checkingCorrectExpression() {
+    fun checkingCorrectExpressionTest() {
         val expected = true
         val calculator = Calculator()
         val expression = "(12+(3-4)/6)/(34-65*2+2)"
@@ -11,7 +11,7 @@ internal class CalculatorTest {
     }
 
     @Test
-    fun checkingInvalidExpression() {
+    fun checkingInvalidExpressionTest() {
         val expected = false
         val calculator = Calculator()
         val expression = "(12+(3-4)/6)/(34-65*+2+2)"
